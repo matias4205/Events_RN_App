@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 
 import Layout from './components/EventsListLayout';
 import EventItem from './components/EventItem';
 import Separator from './components/EventItemSeparator';
 
-import data from '../../moks/events_moks.json';
+const EventsList = (props) => {
+    const keyExtractor = (item) => item.id.toString();
 
-class EventsList extends Component {
-    keyExtractor = (item) => item.id.toString();
+    const itemSeparator = () => <Separator />
 
-    itemSeparator = () => <Separator />
+    const renderEmpty = () => <Text>No hay sugerencias</Text>
 
-    renderEmpty = () => <Text>No hay sugerencias</Text>
+    const renderItem = ({item}) => <EventItem title={item.description} date={item.date} type={item.type} />
 
-    renderItem = ({item}) => <EventItem title={item.description} date={item.date} type={item.type} />
-
-    render() {
-        return (
-            <Layout>
-                <FlatList data={ data } renderItem={ this.renderItem } ListEmptyComponent={ this.renderEmpty } ItemSeparatorComponent={ this.itemSeparator } keyExtractor={ this.keyExtractor } />
-            </Layout>
-        );
-    }
+    return (
+        <Layout>
+            <FlatList data={ props.data } renderItem={ renderItem } ListEmptyComponent={ renderEmpty } ItemSeparatorComponent={ itemSeparator } keyExtractor={ keyExtractor } />
+        </Layout>
+    );
 }
 
 export default EventsList;

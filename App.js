@@ -1,24 +1,15 @@
-import React from 'react';
-import {createStackNavigator} from 'react-navigation';
-import { StyleSheet, Text } from 'react-native';
+import React, { Component } from 'react';
+import { StatusBar } from 'react-native';
 
-import Home from './src/screens/Home'
+import AppNavigator from './src/navigation/AppNavigation';
 
-const StackNavigation = createStackNavigator({
-  Home: {
-    screen: Home,
-    path: 'home/',
-    navigationOptions: {
-      title: 'Home'
-    }
+class App extends Component {
+  render() {
+    console.disableYellowBox = true
+    return (
+      <AppNavigator  />
+    );
   }
-},
-{
-  initialRouteName: "Home",
-  cardStyle:{
-    backgroundColor: '#FFFFFF'
-  },
 }
-)
 
-export default StackNavigation;
+export default App;

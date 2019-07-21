@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#f9f9f9',
         borderRadius: 10,
         flexDirection: 'row',
-        elevation: 1
+        elevation: 1,
+        marginVertical: 3,
+        marginHorizontal: 3
     },
     type: {
         fontSize: 11,
