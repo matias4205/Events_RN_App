@@ -1,16 +1,47 @@
 import React, { Component } from 'react';
-import MainTabNavigator from './BasicTabNavigator'
 
-import data from  '../moks/events_moks.json'; 
+import MainTabNavigator from './BasicTabNavigator'
 
 class CustomTabNavigation extends Component {
     static router = MainTabNavigator.router
+    state = {
+        loading: true,
+        error: undefined,
+        data: []
+    }
+
+    async getEvents(){
+        this.setState({
+            loading: true,
+            error: undefined
+        })
+
+        try {
+            const data = await fetch('http://181.229.213.140:4205/events');
+            const json = await data.json();
+            this.setState({
+                loading: false,
+                error: undefined,
+                data: json
+            });
+        } catch (error) {
+            this.setState({
+                loading: false,
+                error
+            });
+        }
+    }
+
+    componentDidMount(){
+        this.getEvents();
+    }
 
     render() {
         const { navigation } = this.props;
+        const { data, loading, error } = this.state;
 
         return (
-            <MainTabNavigator screenProps={ { data } } navigation={ navigation } /> //ES SUPER IMPORTANTE PASARLE EL NAVIGATION
+            <MainTabNavigator screenProps={ { error, loading, data } } navigation={ navigation } /> //ES SUPER IMPORTANTE PASARLE EL NAVIGATION
         );
     }
 }

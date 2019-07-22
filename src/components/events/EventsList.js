@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Text, StyleSheet } from 'react-native';
 
 import Layout from './components/EventsListLayout';
 import EventItem from './components/EventItem';
@@ -10,7 +10,7 @@ const EventsList = (props) => {
 
     const itemSeparator = () => <Separator />
 
-    const renderEmpty = () => <Text>No hay sugerencias</Text>
+    const renderEmpty = () => <Text style={styles.empty}>No hay eventos! 😎</Text>
 
     const renderItem = ({item}) => <EventItem title={item.description} date={item.date} type={item.type} />
 
@@ -20,5 +20,14 @@ const EventsList = (props) => {
         </Layout>
     );
 }
+
+const styles = StyleSheet.create({
+    empty: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        marginTop: 20
+    }
+});
 
 export default EventsList;

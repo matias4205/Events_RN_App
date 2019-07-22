@@ -11,8 +11,8 @@ const EventsListLayout = (props) => {
 
 const styles = StyleSheet.create({
     container:{
-        paddingVertical: 20,
-        paddingHorizontal: 10,
+        marginTop: 15,
+        paddingHorizontal: 10
     }
 });
 
