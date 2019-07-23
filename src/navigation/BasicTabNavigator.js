@@ -8,22 +8,19 @@ const AppNavigator = createMaterialTopTabNavigator({
     Tests: {
         screen: Home,
         params: {
-            filterFunc: testFilter,
-            dick: 'aaaaaaa'
+            filterFunc: testFilter
         }
     },
     Homework: {
         screen: Home,
         params: {
-            filterFunc: homeworkFilter,
-            dick: 'aaaaaaa'
+            filterFunc: homeworkFilter
         }
     },
     Schedule: {
         screen: Home,
         params: {
-            filterFunc: scheduleFilter,
-            dick: 'aaaaaaa'
+            filterFunc: scheduleFilter
         }
     }
 },
@@ -40,10 +37,11 @@ const AppNavigator = createMaterialTopTabNavigator({
             fontWeight: 'bold'
         },
         style: {
-            backgroundColor: '#26364c'
+            backgroundColor: '#2E166F'
         },
         indicatorStyle: {
-            backgroundColor: '#70B122'
+            backgroundColor: '#70B122',
+            height: 4
         }
     },
     

@@ -41,7 +41,7 @@ class CustomTabNavigation extends Component {
         const { data, loading, error } = this.state;
 
         return (
-            <MainTabNavigator screenProps={ { error, loading, data } } navigation={ navigation } /> //ES SUPER IMPORTANTE PASARLE EL NAVIGATION
+            <MainTabNavigator screenProps={ { error, loading, data } } navigation={ navigation } />
         );
     }
 }

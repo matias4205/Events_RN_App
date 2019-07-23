@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { Text, StyleSheet, ActivityIndicator, StatusBar } from 'react-native';
 
 import Layout from './components/HomeLayout';
 import EventList from '../components/events/EventsList';
@@ -12,6 +12,7 @@ class Home extends Component {
 
         return (
             <Layout footer={<Text style={styles.footerText} > Made with ❤ by @matias4205 </Text>} >
+                <StatusBar backgroundColor="#2E166F" barStyle="light-content" />
                 { loading && <ActivityIndicator style={{ marginTop: 20 }} size='large' />  }
                 { error && <Text style={styles.error}> {error.message} </Text> }
                 { !error && !loading && <EventList data={events} /> }
