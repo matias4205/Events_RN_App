@@ -2,12 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 import EventItemImage from '../../../assets/Images/EventItemImg2.png'
+import EventIcon from './EventIcon';
 
 const EventItem = (props) => {
     return (
         <View style={styles.container}>
                 <View style={styles.left}>
-                    <Image style={styles.image} source={EventItemImage} />
+                    <EventIcon title={props.title} />
+                    {/* <Image style={styles.image} source={EventItemImage} /> */}
                 </View>
                 <View style={styles.right}>
                     <Text style={styles.title}> {props.title} </Text>
@@ -50,11 +52,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 5
-    },
-    image: {
-        width: 60,
-        height: 60,
-        borderRadius: 80
     },
     date: {
         marginBottom: 5

@@ -2,6 +2,11 @@
   "name": "events",
   "version": "0.0.1",
   "private": true,
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts"
+    ]
+  },
   "scripts": {
     "start": "react-native start",
     "test": "jest",
