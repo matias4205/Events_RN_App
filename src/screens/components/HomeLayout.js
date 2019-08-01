@@ -4,9 +4,9 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 const HomeLayout = (props) => {
     return (
         <View style={styles.container}>
-            <ScrollView>
+            <View style={styles.container}>
                 {props.children}
-            </ScrollView>
+            </View>
             
             <View style={styles.footer}>
                 { props.footer }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     footer: {
         backgroundColor: '#EAEAEA',
         paddingVertical: 15,
-        elevation: 2
+        elevation: 1
     }
 })
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-import EventItemImage from '../../../assets/Images/EventItemImg2.png'
 import EventIcon from './EventIcon';
 
 const EventItem = (props) => {
@@ -9,12 +8,11 @@ const EventItem = (props) => {
         <View style={styles.container}>
                 <View style={styles.left}>
                     <EventIcon title={props.title} />
-                    {/* <Image style={styles.image} source={EventItemImage} /> */}
                 </View>
                 <View style={styles.right}>
-                    <Text style={styles.title}> {props.title} </Text>
-                    <Text style={styles.date}> {props.date.day}/{props.date.month}/{props.date.year} </Text>
-                    <Text style={styles.type}> {props.type} </Text>
+                    <Text style={styles.title}>{props.title}</Text>
+                    <Text style={styles.date}>{props.date.day}/{props.date.month}/{props.date.year}</Text>
+                    <Text style={styles.type}>{props.type}</Text>
                 </View>
         </View>
     );
@@ -36,10 +34,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#70b124',
         borderRadius: 15,
         paddingVertical: 4,
-        paddingHorizontal: 6,
+        paddingHorizontal: 10,
         alignSelf: 'flex-start',
         color: 'white',
-        fontSize: 12
+        fontSize: 12,
+        fontFamily: 'Roboto'
     },
     right: {
         paddingLeft: 15,
@@ -51,10 +50,12 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 5
+        marginBottom: 5,
+        fontFamily: 'Roboto'
     },
     date: {
-        marginBottom: 5
+        marginBottom: 5,
+        fontFamily: 'Roboto'
     }
 });
 

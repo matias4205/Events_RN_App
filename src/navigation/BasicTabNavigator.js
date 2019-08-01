@@ -34,7 +34,8 @@ const AppNavigator = createMaterialTopTabNavigator({
         },
         labelStyle: {
             fontSize: 15,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            fontFamily: 'Roboto'
         },
         style: {
             backgroundColor: '#2E166F'

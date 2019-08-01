@@ -10,7 +10,7 @@ class CustomTabNavigation extends Component {
         data: []
     }
 
-    async getEvents(){
+    getEvents = async () => {
         this.setState({
             loading: true,
             error: undefined
@@ -41,7 +41,8 @@ class CustomTabNavigation extends Component {
         const { data, loading, error } = this.state;
 
         return (
-            <MainTabNavigator screenProps={ { error, loading, data } } navigation={ navigation } />
+            <MainTabNavigator screenProps={ { error, loading, data, getEvents: this.getEvents } } navigation={ navigation } />
+
         );
     }
 }

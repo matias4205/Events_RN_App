@@ -16,7 +16,7 @@ const EventsList = (props) => {
 
     return (
         <Layout>
-            <FlatList data={ props.data } renderItem={ renderItem } ListEmptyComponent={ renderEmpty } ItemSeparatorComponent={ itemSeparator } keyExtractor={ keyExtractor } />
+            <FlatList data={ props.data } renderItem={ renderItem } ListEmptyComponent={ renderEmpty } ItemSeparatorComponent={ itemSeparator } keyExtractor={ keyExtractor } refreshing={props.refreshing} onRefresh={props.getEvents} />
         </Layout>
     );
 }
@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         alignSelf: 'center',
         marginTop: 20,
-        color: "#939393"
+        color: "#939393",
+        fontFamily: 'Roboto'
     }
 });
 
